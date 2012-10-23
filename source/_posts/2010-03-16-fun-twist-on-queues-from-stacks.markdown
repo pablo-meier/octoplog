@@ -27,7 +27,7 @@ instance of a stack: _use the program's call stack, along with recursion, to
 keep track of intermediate values._ Shown algorithmically (in Ruby, since it
 looks the most like pseudocode):
 
-{% highlight ruby %}
+{% codeblock lang:ruby %}
     def enqueue(element)
         @stack.push element
     end
@@ -44,12 +44,12 @@ looks the most like pseudocode):
             raise EmptyStackException
         end
     end
-{% endhighlight %}
+{% endcodeblock %}
 
 
 _Amazing!_ Here's the standard solution with two stacks:
 
-{% highlight ruby %}
+{% codeblock lang:ruby %}
     def enqueue(element)
         @first.push element
     end
@@ -66,7 +66,7 @@ _Amazing!_ Here's the standard solution with two stacks:
             return @second.pop
         end
     end
-{% endhighlight %}
+{% endcodeblock %}
 
 The intuition in this case is that you use one stack for enqueueing and
 another for dequeueing. When the dequeue stack becomes empty, you remove all

@@ -32,7 +32,7 @@ standards, but almost no thinking required, and the answer in an instant! Note
 the original version didn't have so many comments; these are to guide the
 curious reader. 
 
-{% highlight prolog %}
+{% codeblock lang:prolog %}
 %% A question is a [[question number,answer], correctness].
 %% Example:
 %% [[1,a], correct]
@@ -150,7 +150,7 @@ colin_score(Score) :-
   colin_test(X),
   test_integrity(X),
   test_score(X, Score).
-{% endhighlight %}
+{% endcodeblock %}
 
    [1]: http://www.morepaul.com/2010/09/repost-professor-layton-and-hell-yes.html
 

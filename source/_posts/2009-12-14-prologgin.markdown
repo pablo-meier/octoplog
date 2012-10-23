@@ -78,9 +78,9 @@ two hands is a game between two players.
 Throwing it all together, here's are some of the rules I wrote that determine
 a player's hand in poker:
 
-{% highlight prolog %}
+{% codeblock lang:prolog %}
     determine_hand([[_,X],[_,X],[_,X],[_,X],[_,X]], flush).
-{% endhighlight %}
+{% endcodeblock %}
 
 In English, this says: the relation _determine_hand_ is true if two conditions
 are met. The first value is a hand of cards, for which the second value on
@@ -89,9 +89,9 @@ _determine_hand_ is the value "flush." The underscore in the place of the
 values of the cards tells Prolog "we don't care what goes there," since
 getting a flush is only dependent on the suits of the cards. Here is another:
 
-{% highlight prolog %}
+{% codeblock lang:prolog %}
     determine_hand([[10,X],[jack,X],[queen,X],[king,X],[ace,X]], royal_flush).
-{% endhighlight %}
+{% endcodeblock %}
 
 This clause says: the relation _determine_hand_ is true if two things occur:
 the first, its left side is a 5-tuple of pairs. The values of the represented
@@ -101,9 +101,9 @@ _determine_hand_ must be the value "royal_flush."
 
 So if I then prompted Prolog with:
 
-{% highlight prolog %}
+{% codeblock lang:prolog %}
     determine_hand([[10,clubs],[3,clubs],[8,clubs],[queen,clubs],[6,clubs]], HandType).
-{% endhighlight %}
+{% endcodeblock %}
 
 Prolog would search the possible values for HandType (variables begin with
 capital letters) until it found some value to make it true given the rules
@@ -130,7 +130,7 @@ than OR).
 This should be enough (coming at you very fast!) to give you a flavor for how
 the program worked. Here is the top-level relation:
 
-{% highlight prolog %}
+{% codeblock lang:prolog %}
     winner(H1, H2, Winner) :-
        sort_hand(H1, Sorted_Hand1),
        sort_hand(H2, Sorted_Hand2),
@@ -143,7 +143,7 @@ the program worked. Here is the top-level relation:
         tiebreak(X1, Sorted_Hand1, Sorted_Hand2, SortedWinner),
          (SortedWinner = left, Winner = H1 ;
           SortedWinner = right, Winner = H2)).
-{% endhighlight %}
+{% endcodeblock %}
 
 It goes something like this in English: The _winner_ relation is true if the
 following are true, for two poker hands H1 and H2, and some value Winner:
@@ -215,7 +215,7 @@ false.
 --
 the code: 
 
-{% highlight prolog %}
+{% codeblock lang:prolog %}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Top Level
 
@@ -399,7 +399,7 @@ value_greater_than(X,Y) :-
   (Y = P;
   value_greater_than(P,Y)).
 
-{% endhighlight %}
+{% endcodeblock %}
 
 
    [1]: http://www.projecteuler.net/

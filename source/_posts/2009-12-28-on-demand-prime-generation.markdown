@@ -21,15 +21,15 @@ In Haskell, I used [a former exercise from my CS173 class][2] that highlighted
 laziness as a language feature to achieve this. First, we declare our list of
 primes:
 
-{% highlight hs %}
+{% codeblock lang:hs %}
     primes :: [Int]
     primes = filter isPrime [1..]
-{% endhighlight %}
+{% endcodeblock %}
 
 And then we define the predicate to determine if a number is prime or not, on
 which our list depends:
 
-{% highlight hs %}
+{% codeblock lang:hs %}
     isPrime :: Int -> Bool
     isPrime 1 = False
     isPrime 2 = True
@@ -39,7 +39,7 @@ which our list depends:
     checkFactors :: [Int] -> Int -> Bool
     checkFactors [] _ = True
     checkFactors (x:xs) num = (num `mod` x) /= 0 && checkFactors xs num
-{% endhighlight %}
+{% endcodeblock %}
 
 For those who aren't Haskellites (even those who are, since my Haskell
 probably isn't very pretty or idiomatic), the code is doing this:
@@ -100,7 +100,7 @@ use this facility. That being said, the speed of the language itself left me
 wanting, so I ported a somewhat similar abstraction to C. We'll do this in the
 opposite order, first defining an isPrime:
 
-{% highlight c %}
+{% codeblock lang:c %}
     BOOL
     isPrime(int num)
     {
@@ -111,12 +111,12 @@ opposite order, first defining an isPrime:
       }
       return TRUE;
     }
-{% endhighlight %}
+{% endcodeblock %}
 
 This relies on a takePrime function, which can be called continuously to fetch
 the next prime from an index value. It looks like:
 
-{% highlight c %}
+{% codeblock lang:c %}
     unsigned int
     takePrime(int* indx)
     {
@@ -136,7 +136,7 @@ the next prime from an index value. It looks like:
         return next_prime;
       }
     }
-{% endhighlight %}
+{% endcodeblock %}
 
 Where prime_ptr is an array of integers, memset to some value UNCOMPUTED (I've
 left out most of the header information, as well as the init() and finished()

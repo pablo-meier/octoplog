@@ -31,14 +31,14 @@ When most people talk about a type system, they almost always mean static
 types. _This does not mean that dynamically typed languages don't have type
 systems._ Far from it. Compare this 'untyped' Ruby code:
 
-{% highlight ruby %}
+{% codeblock lang:ruby %}
     my_array = [1,2,3]
     0.upto(100){ |i| puts (my_array[i] + 1).to_s }
-{% endhighlight %}
+{% endcodeblock %}
 
 with the 'typed' C code:
 
-{% highlight c %}
+{% codeblock lang:c %}
     unsigned array[3];
     array[0] = 1;
     array[1] = 2;
@@ -47,7 +47,7 @@ with the 'typed' C code:
     for(i = 0; i < 100; ++i) {
         printf("%d\n", array[i] + "Stack Pointer!");
     }
-{% endhighlight %}
+{% endcodeblock %}
 
 
 The output of the Ruby:
@@ -110,9 +110,9 @@ write in your program to tell the compiler what the type of everything is.
 You'll find these in C, C++, Java, and C#; I once had a _really_ ugly line of
 Java that looked something like:
 
-{% highlight java %}
+{% codeblock lang:java %}
     HashMap<String, ArrayList<Integer>> scoreMap = new HashMap<String, ArrayList<Integer>>();
-{% endhighlight %}
+{% endcodeblock %}
 
 (I've [ranted about][4] Java's verbosity before). You won't find lines like
 that (or at least they're not mandatory) in SML, Haskell, or Scala. Using

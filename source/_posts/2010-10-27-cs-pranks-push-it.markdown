@@ -50,7 +50,7 @@ how_many_pushes.txt
   * Write a script to keep track of and increment that number as time goes on.
 Here's my Ruby script:
 
-{% highlight rb %}
+{% codeblock lang:rb %}
     #!/usr/bin/ruby
 
     FILENAME = "this_many_pushes.txt"
@@ -68,13 +68,13 @@ Here's my Ruby script:
     puts num_pushes.to_s
 
     if num_pushes == 0
-    puts "Push it!"
-    system("mpg123 #{PUSH_IT_DIR}/push_it.mp3 &")
-    system("echo '5' > #{FILENAME}")
+		puts "Push it!"
+		system("mpg123 #{PUSH_IT_DIR}/push_it.mp3 &")
+		system("echo '5' > #{FILENAME}")
     else
-    system("echo '#{num_pushes - 1}' > #{FILENAME}")
+		system("echo '#{num_pushes - 1}' > #{FILENAME}")
     end
-{% endhighlight %}
+{% endcodeblock %}
 
 
   * Execute git config --global alias.psh !push_wrapper.rb.
